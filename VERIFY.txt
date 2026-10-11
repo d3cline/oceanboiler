@@ -1,0 +1,33 @@
+OCEANBOILER 0.1 build verification
+
+PASS: 6 automated regression tests, including all eight engines at tone extremes.
+PASS: channel 10, note-on velocity zero, early note-off, wrong-channel filtering,
+      and duplicate-note learn rejection.
+PASS: sample-count sequencer at 120 BPM with 30% swing.
+PASS: 32-voice cap and panic clears audio to zero.
+PASS: JSON session roundtrip and invalid numeric rejection.
+PASS: 24-bit WAV recording with exact expected frame count.
+PASS: Qt offscreen window construction, voice trigger/render, session load,
+      control refresh, and screenshot generation.
+PASS: deterministic 8.86-second stereo offline demo rendered.
+
+BENCHMARK: 1,000 blocks of the demo pattern, 256 frames at 48 kHz.
+Mean 0.533 ms; p99 1.062 ms; audio duration per block 5.333 ms.
+These values exclude actual audio-driver and physical MIDI scheduling.
+
+NOT TESTED: user's physical KAT KTMP1, USB cable/device enumeration,
+actual Manjaro PipeWire output, physical latency, listening on user equipment.
+The build container has no attached KAT or audio device and no PortAudio library.
+
+Python 3.12 build environment; PySide6 offscreen UI smoke tested.
+
+0.2 checks: all 13 engine families, all 52 presets, legacy patch loading,
+six-input routing in GUI smoke test. Physical KAT and PipeWire remain untested.
+
+0.3: Qt offscreen layout/trigger/session/routing smoke check passed.
+UI-only revision; physical display, KAT and audio-device checks remain pending.
+
+0.4: 10 tests passed including layered rendering, cleanup, disabled layers,
+invalid/recursive layer rejection and JSON roundtrip. GUI smoke test also
+exercised Forge apply, audition render and loading the current voice.
+Physical MIDI/PipeWire hardware remains untested here.
