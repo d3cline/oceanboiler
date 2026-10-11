@@ -153,4 +153,4 @@ Mute checkboxes now explicitly say **MUTE**. Muted Play pads turn gray and displ
 
 DSP cost scales with enabled layers: a 32-voice cap can contain up to 96 child synth voices. This version has not been benchmarked on the user's machine at that maximum. Raise the buffer if heavy layering causes underruns. Existing master soft limiting remains in place.
 
-Extract into the new Oceanboiler-0.4 folder, run `bash install.sh`, then `bash run.sh`. No old installation files are modified. This package contains full source and has no runtime cloud dependency. An open-source license has not yet been selected; this release does not add a license on your behalf.
+Extract into the new Oceanboiler-0.4 folder, run `bash install.sh`, then `bash run.sh`. No old installation files are modified. This package contains full source and has no runtime cloud dependency. Oceanboiler is released under the GNU General Public License v3.0. See LICENSE.
